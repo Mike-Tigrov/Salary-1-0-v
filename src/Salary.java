@@ -7,18 +7,22 @@
 2. Реклама встроена в приложение;
 
 Идеи для реализации:
+- Ввод с клавиатуры;
 - Конвертер времени - из часов и % по минутам в минуты;
 - Графики по месяцам;
 - Сравнение зарплаты полученной и прогнозной;
 - Встроенный календарь;
-- Сколько надо часов для выполения плана по часам;
+- Сколько осталось часов для выполения плана по часам;
+- Интерфейс с кнопками;
+- Встроенный таймер;
+- Ограничитель по выводу цифр после запятой (2 цифры);
  */
 public class Salary {
     public static void main(String[] args) {
         // Тут мы экономим время, чтобы писать вместо целого слова, одну-две буквы
         String v = "Выходной";
-        String sb = " Суббота";
-        String vs = " Воскресенье";
+        String sb = " - Суббота";
+        String vs = " - Воскресенье";
         String j = " января: ";
         String h = " час. ";
         String m = " мин. ";
@@ -26,8 +30,8 @@ public class Salary {
         String zp = ". Зарплата: ";
 
         // Далее мы "сходим с ума" и все даты пишем через переменные, качаем внимательность к деталям ;)))
-        String a = "0", b = "1", c = "2"; //Первые три через текстовый тип, чтобы они не складывались при выводе
-        int d = 3, e = 4, f = 5, g = 6, r = 7, i = 8, k = 9;
+        String a = "0", b = "1", c = "2", d = "3"; //Через текстовый тип, чтобы они не складывались при выводе
+        int e = 4, f = 5, g = 6, r = 7, i = 8, k = 9;
         int m60 = 60; // В часе - 60 минут
         double sph = 0.76; // Ставка зарплаты за 1 минуту
 
@@ -88,42 +92,44 @@ public class Salary {
         System.out.println(c+a+j+d20h+h+d20m+m+al+(d20h*m60+d20m)+zp+(d20h*m60+d20m)*sph);
 
         int d21h = 8, d21m = 9;
-        System.out.println(c+a+j+d21h+h+d21m+m+al+(d21h*m60+d21m)+zp+(d21h*m60+d21m)*sph);
+        System.out.println(c+b+j+d21h+h+d21m+m+al+(d21h*m60+d21m)+zp+(d21h*m60+d21m)*sph);
 
         int d22h = 9, d22m = 47;
-        System.out.println(c+a+j+d22h+h+d22m+m+al+(d22h*m60+d22m)+zp+(d22h*m60+d22m)*sph);
+        System.out.println(c+c+j+d22h+h+d22m+m+al+(d22h*m60+d22m)+zp+(d22h*m60+d22m)*sph);
 
         int d23h = 0, d23m = 0; // сб
-        System.out.println(c+a+j+v+sb);
+        System.out.println(c+d+j+v+sb);
 
         int d24h = 0, d24m = 0; // вс
-        System.out.println(c+a+j+v+vs);
+        System.out.println(c+e+j+v+vs);
 
         int d25h = 8, d25m = 52;
-        System.out.println(c+a+j+d25h+h+d25m+m+al+(d25h*m60+d25m)+zp+(d25h*m60+d25m)*sph);
+        System.out.println(c+f+j+d25h+h+d25m+m+al+(d25h*m60+d25m)+zp+(d25h*m60+d25m)*sph);
 
         int d26h = 8, d26m = 38;
-        System.out.println(c+a+j+d26h+h+d26m+m+al+(d26h*m60+d26m)+zp+(d26h*m60+d26m)*sph);
+        System.out.println(c+g+j+d26h+h+d26m+m+al+(d26h*m60+d26m)+zp+(d26h*m60+d26m)*sph);
 
         int d27h = 8, d27m = 15;
-        System.out.println(c+a+j+d27h+h+d27m+m+al+(d27h*m60+d27m)+zp+(d27h*m60+d27m)*sph);
+        System.out.println(c+r+j+d27h+h+d27m+m+al+(d27h*m60+d27m)+zp+(d27h*m60+d27m)*sph);
 
         int d28h = 0, d28m = 0;
-        System.out.println();
+        System.out.println(c+i+j);
 
         int d29h = 0, d29m = 0;
-        System.out.println();
+        System.out.println(c+k+j);
 
         int d30h = 0, d30m = 0;
-        System.out.println();
+        System.out.println(d+a+j);
 
         int d31h = 0, d31m = 0;
-        System.out.println();
+        System.out.println(d+b+j);
 
-        int allm = m60*(d04h+d05h+d06h+d11h+d12h+d13h+d14h+d15h+d16h+d18h+d19h)+
-                +(d04m+d05m+d06m+d11m+d12m+d13m+d14m+d15m+d16m+d18m+d19m);
+        int allm = m60*(d04h+d05h+d06h+d11h+d12h+d13h+d14h+d15h+d16h+d18h+d19h+d20h
+                +d21h+d22h+d23h+d24h+d25h+d26h+d27h+d28h+d29h+d30h+d31h)+
+                      +(d04m+d05m+d06m+d11m+d12m+d13m+d14m+d15m+d16m+d18m+d19m+d20m
+                +d21m+d22m+d23m+d24m+d25m+d26m+d27m+d28m+d29m+d30m+d31m);
         double allzp = allm * sph;
-        System.out.println(al+allm+zp+allzp+" на 19.01.2021");
+        System.out.println(al+allm+zp+allzp+" грн");
 
 
 
