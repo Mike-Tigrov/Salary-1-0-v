@@ -1,6 +1,17 @@
 /*
 Создано 15 янв 2021. Программа подсчёта заработной платы исходя из количества отработанных минут.
 По мере повышения опыта, проект будет модернизирован.
+
+Конечная цель:
+1. Бесплатное приложение на Google play market для вычисления зарплаты по часам;
+2. Реклама встроена в приложение;
+
+Идеи для реализации:
+- Конвертер времени - из часов и % по минутам в минуты;
+- Графики по месяцам;
+- Сравнение зарплаты полученной и прогнозной;
+- Встроенный календарь;
+- Сколько надо часов для выполения плана по часам;
  */
 public class Salary {
     public static void main(String[] args) {
@@ -70,13 +81,49 @@ public class Salary {
         int d18h = 8, d18m = 23;
         System.out.println(b+i+j+d18h+h+d18m+m+al+(d18h*m60+d18m)+zp+(d18h*m60+d18m)*sph);
 
-        int d19h = 0, d19m = 0;
+        int d19h = 9, d19m = 23;
+        System.out.println(b+k+j+d19h+h+d19m+m+al+(d19h*m60+d19m)+zp+(d19h*m60+d19m)*sph);
+
+        int d20h = 8, d20m = 24;
+        System.out.println(c+a+j+d20h+h+d20m+m+al+(d20h*m60+d20m)+zp+(d20h*m60+d20m)*sph);
+
+        int d21h = 8, d21m = 9;
+        System.out.println(c+a+j+d21h+h+d21m+m+al+(d21h*m60+d21m)+zp+(d21h*m60+d21m)*sph);
+
+        int d22h = 9, d22m = 47;
+        System.out.println(c+a+j+d22h+h+d22m+m+al+(d22h*m60+d22m)+zp+(d22h*m60+d22m)*sph);
+
+        int d23h = 0, d23m = 0; // сб
+        System.out.println(c+a+j+v+sb);
+
+        int d24h = 0, d24m = 0; // вс
+        System.out.println(c+a+j+v+vs);
+
+        int d25h = 8, d25m = 52;
+        System.out.println(c+a+j+d25h+h+d25m+m+al+(d25h*m60+d25m)+zp+(d25h*m60+d25m)*sph);
+
+        int d26h = 8, d26m = 38;
+        System.out.println(c+a+j+d26h+h+d26m+m+al+(d26h*m60+d26m)+zp+(d26h*m60+d26m)*sph);
+
+        int d27h = 8, d27m = 15;
+        System.out.println(c+a+j+d27h+h+d27m+m+al+(d27h*m60+d27m)+zp+(d27h*m60+d27m)*sph);
+
+        int d28h = 0, d28m = 0;
         System.out.println();
 
-        int allm = m60*(d04h+d05h+d06h+d11h+d12h+d13h+d14h+d15h+d16h+d18h)+
-        +(d04m+d05m+d06m+d11m+d12m+d13m+d14m+d15m+d16m+d18m);
+        int d29h = 0, d29m = 0;
+        System.out.println();
+
+        int d30h = 0, d30m = 0;
+        System.out.println();
+
+        int d31h = 0, d31m = 0;
+        System.out.println();
+
+        int allm = m60*(d04h+d05h+d06h+d11h+d12h+d13h+d14h+d15h+d16h+d18h+d19h)+
+                +(d04m+d05m+d06m+d11m+d12m+d13m+d14m+d15m+d16m+d18m+d19m);
         double allzp = allm * sph;
-        System.out.println(al+allm+zp+allzp+" на 18.01.2021");
+        System.out.println(al+allm+zp+allzp+" на 19.01.2021");
 
 
 
