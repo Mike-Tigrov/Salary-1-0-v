@@ -16,6 +16,7 @@
 - Интерфейс с кнопками;
 - Встроенный таймер;
 - Ограничитель по выводу цифр после запятой (2 цифры);
+- Перевод на другие языки;
  */
 public class Salary {
     public static void main(String[] args) {
@@ -112,24 +113,24 @@ public class Salary {
         int d27h = 8, d27m = 15;
         System.out.println(c+r+j+d27h+h+d27m+m+al+(d27h*m60+d27m)+zp+(d27h*m60+d27m)*sph);
 
-        int d28h = 0, d28m = 0;
-        System.out.println(c+i+j);
+        int d28h = 8, d28m = 15;
+        System.out.println(c+i+j+d28h+h+d27m+m+al+(d28h*m60+d27m)+zp+(d28h*m60+d28m)*sph);
 
-        int d29h = 0, d29m = 0;
-        System.out.println(c+k+j);
+        int d29h = 9, d29m = 7;
+        System.out.println(c+k+j+d29h+h+d29m+m+al+(d29h*m60+d29m)+zp+(d29h*m60+d29m)*sph);
 
-        int d30h = 0, d30m = 0;
-        System.out.println(d+a+j);
+        int d30h = 5, d30m = 42;
+        System.out.println(d+a+j+d30h+h+d30m+m+al+(d30h*m60+d30m)+zp+(d30h*m60+d30m)*sph);
 
         int d31h = 0, d31m = 0;
-        System.out.println(d+b+j);
+        System.out.println(d+b+j+v+vs);
 
         int allm = m60*(d04h+d05h+d06h+d11h+d12h+d13h+d14h+d15h+d16h+d18h+d19h+d20h
                 +d21h+d22h+d23h+d24h+d25h+d26h+d27h+d28h+d29h+d30h+d31h)+
                       +(d04m+d05m+d06m+d11m+d12m+d13m+d14m+d15m+d16m+d18m+d19m+d20m
                 +d21m+d22m+d23m+d24m+d25m+d26m+d27m+d28m+d29m+d30m+d31m);
         double allzp = allm * sph;
-        System.out.println(al+allm+zp+allzp+" грн");
+        System.out.println(al+allm+zp+allzp+" грн.");
 
 
 
